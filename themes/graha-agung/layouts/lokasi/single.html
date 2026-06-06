@@ -1,23 +1,177 @@
 {{ define "main" }}
-  {{ $kota := .File.ContentBaseName }}
-  {{ $filtered := where .Site.Data.lokasi "kota" $kota }}
-  {{ if $filtered }}
-    {{ $data := index $filtered 0 }}
-    <section class="section">
-      <div class="container">
-        <h1>Properti di {{ $data.nama }}</h1>
-        <p>{{ $data.deskripsi }}</p>
-        <h3>Area Favorit</h3>
-        <ul>
-          {{ range $data.area }}
-          <li>{{ . }}</li>
-          {{ end }}
-        </ul>
-        <p>🔍 Keyword: {{ $data.keywords }}</p>
-        <a href="/proyek" class="btn btn-primary">Lihat Proyek di {{ $data.nama }}</a>
-      </div>
-    </section>
-  {{ else }}
-    <p>Data tidak ditemukan untuk {{ $kota }}.</p>
+
+{{ $kota := .File.ContentBaseName }}
+{{ $filtered := where hugo.Data.lokasi "kota" $kota }}
+
+{{ if $filtered }}
+
+{{ $data := index $filtered 0 }}
+
+<section class="hero" style="height:60vh;min-height:500px;">
+  <div class="hero-content">
+    <h1>Perumahan & Investasi Properti di {{ $data.nama }}</h1>
+
+```
+<p class="lead">
+  Temukan perumahan, kavling, dan peluang investasi properti terbaik
+  di {{ $data.nama }}, {{ $data.provinsi }} bersama Graha Agung Kencana Group.
+</p>
+
+<a href="https://wa.me/628000000000?text=Halo%20saya%20ingin%20konsultasi%20properti%20di%20{{ $data.nama }}"
+   class="btn btn-primary btn-lg">
+   Konsultasi Gratis
+</a>
+```
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+```
+<nav aria-label="breadcrumb" class="mb-4">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Beranda</a></li>
+    <li class="breadcrumb-item"><a href="/lokasi">Lokasi</a></li>
+    <li class="breadcrumb-item active">{{ $data.nama }}</li>
+  </ol>
+</nav>
+
+<h2>Mengapa Memilih Properti di {{ $data.nama }}?</h2>
+
+<p>{{ $data.deskripsi }}</p>
+
+<h3 class="mt-5">Area Favorit di {{ $data.nama }}</h3>
+
+<div class="row">
+
+  {{ range $data.area }}
+  <div class="col-md-3 mb-3">
+    <div class="glass p-3 rounded-4 h-100">
+      <strong>{{ . }}</strong>
+    </div>
+  </div>
   {{ end }}
+
+</div>
+
+<h3 class="mt-5">Keunggulan Investasi Properti</h3>
+
+<div class="row">
+
+  <div class="col-md-4">
+    <div class="card-project p-4">
+      <h5>Lokasi Strategis</h5>
+      <p>Dekat pusat aktivitas ekonomi dan fasilitas publik.</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card-project p-4">
+      <h5>Potensi Kenaikan Nilai</h5>
+      <p>Pertumbuhan kawasan memberikan peluang capital gain.</p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card-project p-4">
+      <h5>Legalitas Aman</h5>
+      <p>Didukung proses transaksi yang transparan dan jelas.</p>
+    </div>
+  </div>
+
+</div>
+
+<h3 class="mt-5">Proyek Terkait</h3>
+
+<div class="row">
+
+  {{ range where $.Site.RegularPages "Section" "proyek" }}
+
+  <div class="col-md-4 mb-4">
+    <div class="card-project">
+
+      <img
+        src="{{ .Params.image | default "/images/placeholder.jpg" }}"
+        alt="{{ .Title }}"
+        class="img-fluid">
+
+      <div class="card-body">
+
+        <h5>{{ .Title }}</h5>
+
+        <p>{{ .Params.lokasi }}</p>
+
+        <a href="{{ .Permalink }}"
+           class="btn btn-outline-primary">
+           Detail
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+  {{ end }}
+
+</div>
+
+<section class="mt-5">
+
+  <h3>Pertanyaan yang Sering Diajukan</h3>
+
+  <div class="accordion" id="faq">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq1">
+          Apakah tersedia fasilitas KPR?
+        </button>
+      </h2>
+      <div id="faq1" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          Ya, tersedia berbagai pilihan pembiayaan KPR.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq2">
+          Apakah bisa survey lokasi?
+        </button>
+      </h2>
+      <div id="faq2" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          Tentu. Tim kami siap membantu penjadwalan survey.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="text-center mt-5">
+
+  <h3>Tertarik Properti di {{ $data.nama }}?</h3>
+
+  <a href="https://wa.me/628000000000"
+     class="btn btn-primary btn-lg">
+     Hubungi Marketing
+  </a>
+
+</div>
+```
+
+  </div>
+</section>
+
+{{ end }}
+
 {{ end }}
