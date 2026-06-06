@@ -1,10 +1,10 @@
 baseURL = "https://grahaagungkencana.com/"
-languageCode = "id-ID"
+locale = "id-ID"
 title = "Graha Agung Kencana Group"
 theme = "graha-agung"
 
 [params]
-  description = "Developer properti terpercaya: perumahan, kavling, investasi properti."
+  description = "Developer properti terpercaya: perumahan, kavling, investasi properti di Jawa Tengah, Yogyakarta, Jawa Timur."
   author = "Graha Agung Kencana Group"
   ogimage = "/images/og-image.jpg"
 
@@ -12,3 +12,10 @@ theme = "graha-agung"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[permalinks]
+  lokasi = "/properti/:slug/"
+
+[taxonomies]
+  tag = "tags"
+  kategori = "categories"

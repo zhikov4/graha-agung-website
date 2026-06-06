@@ -1,0 +1,23 @@
+{{ define "main" }}
+  {{ $kota := .File.ContentBaseName }}
+  {{ $filtered := where .Site.Data.lokasi "kota" $kota }}
+  {{ if $filtered }}
+    {{ $data := index $filtered 0 }}
+    <section class="section">
+      <div class="container">
+        <h1>Properti di {{ $data.nama }}</h1>
+        <p>{{ $data.deskripsi }}</p>
+        <h3>Area Favorit</h3>
+        <ul>
+          {{ range $data.area }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        <p>🔍 Keyword: {{ $data.keywords }}</p>
+        <a href="/proyek" class="btn btn-primary">Lihat Proyek di {{ $data.nama }}</a>
+      </div>
+    </section>
+  {{ else }}
+    <p>Data tidak ditemukan untuk {{ $kota }}.</p>
+  {{ end }}
+{{ end }}

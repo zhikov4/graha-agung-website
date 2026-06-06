@@ -1,0 +1,74 @@
+[
+  {
+    "kota": "surabaya",
+    "nama": "Surabaya",
+    "provinsi": "Jawa Timur",
+    "deskripsi": "Kota metropolitan terbesar kedua di Indonesia dengan pertumbuhan properti yang pesat. Pilihan ideal untuk hunian dan investasi.",
+    "keywords": "perumahan surabaya, investasi properti surabaya, developer properti surabaya",
+    "area": ["Barat", "Timur", "Selatan", "Utara", "Pusat"]
+  },
+  {
+    "kota": "sidoarjo",
+    "nama": "Sidoarjo",
+    "provinsi": "Jawa Timur",
+    "deskripsi": "Kawasan penyangga Surabaya dengan infrastruktur berkembang. Pusat industri dan perumahan baru.",
+    "keywords": "perumahan sidoarjo, rumah subsidi sidoarjo, investasi properti sidoarjo",
+    "area": ["Kota", "Waru", "Tanggulangin", "Candi"]
+  },
+  {
+    "kota": "gresik",
+    "nama": "Gresik",
+    "provinsi": "Jawa Timur",
+    "deskripsi": "Kota industri dengan permintaan hunian pekerja yang terus meningkat.",
+    "keywords": "perumahan gresik, rumah murah gresik, developer properti gresik",
+    "area": ["Kota", "Kebomas", "Manyar", "Driyorejo"]
+  },
+  {
+    "kota": "mojokerto",
+    "nama": "Mojokerto",
+    "provinsi": "Jawa Timur",
+    "deskripsi": "Kota sejarah dengan akses tol langsung ke Surabaya. Investasi properti mulai dilirik.",
+    "keywords": "perumahan mojokerto, rumah subsidi mojokerto, developer properti mojokerto",
+    "area": ["Kota", "Pacet", "Trawas", "Jetis"]
+  },
+  {
+    "kota": "pasuruan",
+    "nama": "Pasuruan",
+    "provinsi": "Jawa Timur",
+    "deskripsi": "Kawasan industri dan wisata pegunungan. Cocok untuk hunian tenang.",
+    "keywords": "perumahan pasuruan, rumah murah pasuruan, developer properti pasuruan",
+    "area": ["Kota", "Pandaan", "Prigen", "Gempol"]
+  },
+  {
+    "kota": "malang",
+    "nama": "Malang",
+    "provinsi": "Jawa Timur",
+    "deskripsi": "Kota pendidikan dan pariwisata dengan permintaan hunian mahasiswa dan keluarga.",
+    "keywords": "perumahan malang, rumah subsidi malang, investasi properti malang",
+    "area": ["Kota", "Singosari", "Kepanjen", "Batu"]
+  },
+  {
+    "kota": "kediri",
+    "nama": "Kediri",
+    "provinsi": "Jawa Timur",
+    "deskripsi": "Pusat ekonomi di selatan Jawa Timur dengan koneksi tol yang akan datang.",
+    "keywords": "perumahan kediri, rumah murah kediri, developer properti kediri",
+    "area": ["Kota", "Pare", "Wates", "Gurah"]
+  },
+  {
+    "kota": "jombang",
+    "nama": "Jombang",
+    "provinsi": "Jawa Timur",
+    "deskripsi": "Kota santri dengan potensi pasar properti yang terus bertumbuh.",
+    "keywords": "perumahan jombang, rumah subsidi jombang, developer properti jombang",
+    "area": ["Kota", "Peterongan", "Diwek", "Mojoagung"]
+  },
+  {
+    "kota": "lamongan",
+    "nama": "Lamongan",
+    "provinsi": "Jawa Timur",
+    "deskripsi": "Wilayah pantai utara dengan pertumbuhan sektor perikanan dan bisnis.",
+    "keywords": "perumahan lamongan, rumah murah lamongan, developer properti lamongan",
+    "area": ["Kota", "Paciran", "Babat", "Sekaran"]
+  }
+]

@@ -1,0 +1,91 @@
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Graha Agung Kencana Group",
+  "url": "{{ .Site.BaseURL }}",
+  "logo": "{{ .Site.BaseURL }}images/logo.png",
+  "description": "{{ .Site.Params.description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jalan Utama No. 123",
+    "addressLocality": "Semarang",
+    "addressRegion": "Jawa Tengah",
+    "postalCode": "50123",
+    "addressCountry": "ID"
+  },
+  "areaServed": [
+    {{ range $index, $k := .Site.Data.lokasi }}
+    {"@type": "City", "name": "{{ $k.nama }}" }{{ if not (last $index $.Site.Data.lokasi) }},{{ end }}
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ if eq .Section "proyek" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateListing",
+  "name": "{{ .Title }}",
+  "url": "{{ .Permalink }}",
+  "description": "{{ .Params.description }}",
+  "image": "{{ .Params.image | absURL }}",
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ .Params.harga_nominal }}",
+    "priceCurrency": "IDR"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "{{ .Params.kota }}",
+    "addressRegion": "Jawa Timur"
+  }
+}
+</script>
+{{ end }}
+
+{{ if eq .Section "artikel" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}",
+  "author": { "@type": "Organization", "name": "Graha Agung Kencana Group" },
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+  "image": "{{ with .Params.featured_image }}{{ . | absURL }}{{ end }}"
+}
+</script>
+{{ end }}
+
+{{ if eq .Section "faq" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $q := .Params.faq_items }}
+    { "@type": "Question", "name": "{{ $q.question }}", "acceptedAnswer": { "@type": "Answer", "text": "{{ $q.answer }}" } }{{ if ne $i (sub (len $.Params.faq_items) 1) }},{{ end }}
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+
+{{ if .Params.testimoni }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ .Title }}",
+  "review": [
+    {{ range $i, $t := .Params.testimoni }}
+    { "@type": "Review", "author": "{{ $t.nama }}", "reviewBody": "{{ $t.teks }}" }{{ if ne $i (sub (len $.Params.testimoni) 1) }},{{ end }}
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
