@@ -1,6 +1,6 @@
 +++
 date = '2026-06-06T15:45:39+07:00'
-draft = true
+draft = false
 title = 'Panduan Membeli Rumah Pertama'
 +++
 

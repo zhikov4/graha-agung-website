@@ -1,6 +1,6 @@
 +++
 date = '2026-06-06T15:45:07+07:00'
-draft = true
+draft = false
 title = 'Tentang'
 +++
 

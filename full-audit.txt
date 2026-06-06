@@ -1,0 +1,73 @@
+===== CONTENT =====
+content/_index.md
+content/artikel/_index.md
+content/artikel/panduan-beli-rumah-surabaya-2026.md
+content/artikel/panduan-membeli-rumah-pertama.md
+content/download-brosur.md
+content/faq/_index.md
+content/galeri/_index.md
+content/investasi/_index.md
+content/karir/_index.md
+content/kebijakan-privasi.md
+content/kontak/_index.md
+content/lokasi/gresik.md
+content/lokasi/jombang.md
+content/lokasi/kediri.md
+content/lokasi/lamongan.md
+content/lokasi/malang.md
+content/lokasi/mojokerto.md
+content/lokasi/pasuruan.md
+content/lokasi/sidoarjo.md
+content/lokasi/surabaya.md
+content/partnership/_index.md
+content/proyek/_index.md
+content/proyek/graha-angkasa-semarang.md
+content/syarat-ketentuan.md
+content/tentang/_index.md
+content/terima-kasih.md
+content/testimoni/_index.md
+content/video/_index.md
+
+===== LAYOUTS =====
+themes/graha-agung/layouts/_default/baseof.html
+themes/graha-agung/layouts/_default/home.html
+themes/graha-agung/layouts/_default/list.html
+themes/graha-agung/layouts/_default/single.html
+themes/graha-agung/layouts/lokasi/list.html
+themes/graha-agung/layouts/lokasi/single.html
+themes/graha-agung/layouts/partials/footer.html
+themes/graha-agung/layouts/partials/head.html
+themes/graha-agung/layouts/partials/header.html
+themes/graha-agung/layouts/partials/schema.html
+
+===== STATIC =====
+static/images/hero-bg.jpg
+static/images/logo.png
+static/images/og-image.jpg
+static/images/placeholder.jpg
+
+===== DATA =====
+data/lokasi.json
+
+===== CONFIG =====
+baseURL = "https://grahaagungkencana.com/"
+locale = "id-ID"
+title = "Graha Agung Kencana Group"
+theme = "graha-agung"
+
+[params]
+  description = "Developer properti terpercaya: perumahan, kavling, investasi properti di Jawa Tengah, Yogyakarta, Jawa Timur."
+  author = "Graha Agung Kencana Group"
+  ogimage = "/images/og-image.jpg"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[permalinks]
+  lokasi = "/properti/:slug/"
+
+[taxonomies]
+  tag = "tags"
+  kategori = "categories"
