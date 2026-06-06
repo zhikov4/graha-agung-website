@@ -1,0 +1,11 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{ range .Pages }}
+    <div style="margin:20px 0; padding:15px; border:1px solid #ddd;">
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{ if .Params.lokasi }}<p>📍 {{ .Params.lokasi }}</p>{{ end }}
+      {{ if .Params.harga }}<p>💰 Mulai {{ .Params.harga }}</p>{{ end }}
+      <p>{{ .Summary }}</p>
+    </div>
+  {{ end }}
+{{ end }}

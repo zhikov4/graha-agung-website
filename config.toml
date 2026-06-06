@@ -1,0 +1,14 @@
+baseURL = "https://grahaagungkencana.com/"
+languageCode = "id-ID"
+title = "Graha Agung Kencana Group"
+theme = "graha-agung"
+
+[params]
+  description = "Developer properti terpercaya: perumahan, kavling, investasi properti."
+  author = "Graha Agung Kencana Group"
+  ogimage = "/images/og-image.jpg"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
